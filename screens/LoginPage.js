@@ -23,12 +23,12 @@ function LoginPage({ navigation }) {
     }
 
     return (
-        <View>
+        <View style={ styles.container }>
             <Image 
                 style = {styles.logoHeader}
                 source={require("../assets/splash.png")}></Image>
-            <Text
-                style={styles.tagline}>Shop Contact Less</Text>
+            {/* <Text
+                style={styles.tagline}>Shop Contact Less</Text> */}
             
             <View style={styles.form}>
                 <Input
@@ -134,9 +134,13 @@ function LoginPage({ navigation }) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: 'white',
+    },
+    logoHeader:{
+        width: 150,
+        height: 150,
+        marginTop: 30,
+        alignSelf: "center",
     },
     button:{
       margin: 10,
@@ -144,11 +148,6 @@ const styles = StyleSheet.create({
     form: {
       padding: 20,
       marginTop: 50,
-    },
-    logoHeader: {
-      marginTop: 0,
-      marginLeft: 20,
-      marginTop: 10,
     },
     tagline:{
       textAlign: 'center',
