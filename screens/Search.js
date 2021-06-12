@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Text, View, SafeAreaView, ScrollView, StyleSheet, Image } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
 
 import SellerCard from '../components/SellerCard';
 
@@ -10,7 +10,15 @@ function Stores({ navigation }) {
     return (
         <SafeAreaView>
             <ScrollView style={styles.container}>
-                <Text style={styles.heading}>Near You</Text>
+                <Text style={styles.heading}>Search Places</Text>
+                
+                <SearchBar
+                    placeholder="Type Here..."
+                    // value={search}
+                    lightTheme="True"
+                />
+
+                <Text style={styles.results}>🔍 Results for Museum</Text>
 
                 <SellerCard name="Mark's Store" navigation={navigation} img='store.jpg' desc="Get fresh groceries at Mark's store at the cheapest price"/>
                 <SellerCard name="Phil's Store" navigation={navigation} img='store.jpg' desc="Home grown fresh produce available here"/>
@@ -34,7 +42,12 @@ const styles = StyleSheet.create({
     },
     heading: {
         fontSize: 60,
-    }
+    },
+    results: {
+        fontSize: 30,
+        textAlign: "center",
+        marginTop: 20,
+    },
 });
 
 export default Stores

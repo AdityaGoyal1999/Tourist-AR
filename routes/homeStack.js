@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
 import LoginPage from '../screens/LoginPage';
-import Stores from '../screens/Stores';
+import Search from '../screens/Search';
 import StoreView from '../screens/StoreView';
 import Checkout from '../screens/Checkout';
 import VideoCall from '../screens/VideoCall';
@@ -14,8 +14,8 @@ const screens = {
     LoginPage: {
         screen: LoginPage,
     },
-    Stores: {
-        screen: Stores,
+    Search: {
+        screen: Search,
     },
     StoreView:{
         screen: StoreView,

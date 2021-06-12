@@ -60,7 +60,7 @@ function LoginPage({ navigation }) {
                     style={styles.button}
                     onPress={() => {
                         
-                        navigation.navigate('Stores');
+                        navigation.navigate('Search');
                         // alert('email: ' + state.email + ' password: ' + state.password)
                         // 
 
@@ -105,7 +105,7 @@ function LoginPage({ navigation }) {
                             
                             console.log(response);
                             if(response.status === 200){
-                                navigation.navigate('Stores');
+                                navigation.navigate('Search');
                             }
                             else{
                                 alert('User or Password do not exist');
