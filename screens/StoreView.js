@@ -3,25 +3,31 @@ import { SafeAreaView, Text, StyleSheet, ScrollView, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import DiscountCard from '../components/DiscountCard';
 
-function StoreView({ navigation }) {
+function StoreView({ navigation, route }) {
+
+    alert(route)
+    // const { name, img, desc } = route.params;
+
     return (
+
+
         <SafeAreaView style={styles.container}>
-            <Text style={styles.heading }>Mark's Store</Text>
+            <Text style={styles.heading }>Name goes here</Text>
             <ScrollView>
 
-                <DiscountCard name="OFFERS" img='melons.jpeg' desc="20% Discount on Watermelons"/>
+                <DiscountCard name="{route.params.name}" img='melons.jpeg' desc="20% Discount on Watermelons"/>
                 <DiscountCard name="OFFERS" img='melons.jpeg' desc="10% Discount on Bananas"/>
                 <DiscountCard name="OFFERS" img='melons.jpeg' desc="Buy one get one free on select products"/>
 
             </ScrollView>
             <View style={styles.footer}>
                 <Button
-                    title="Video Call with Attendent"
+                    title="Visit Models"
                     // type="outline"
                     style={styles.button}
-                    onPress = {() => navigation.navigate('VideoCall')}
+                    onPress = {() => navigation.navigate('Models')}
                 />
-                <Button
+                {/* <Button
                     title="Checkout Items"
                     type="outline"
                     style={styles.button}
@@ -32,7 +38,7 @@ function StoreView({ navigation }) {
                     // type="outline"
                     style={ styles.button }
                     onPress = {() => navigation.navigate('VoiceToText')}
-                />
+                /> */}
             </View>
         </SafeAreaView>
     )
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
     },
     footer:{
         width: '100%', 
-        height: '40%', 
+        height: '20%', 
         backgroundColor: '#FAF9F6', 
         justifyContent: 'center', 
         // alignItems: 'center',

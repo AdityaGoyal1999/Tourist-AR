@@ -4,8 +4,6 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
 function SellerCard({ name, navigation, img, desc }) {
 
-    // let imageURL = `../assets/` + img;
-    // // print(imageURL)
 
     return (
         <Card>
@@ -21,7 +19,11 @@ function SellerCard({ name, navigation, img, desc }) {
             </Text>
             <Button
             buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-            onPress= {() => navigation.navigate('StoreView')}
+            onPress= {() => navigation.navigate('StoreView', {
+                name: name,
+                img: img,
+                desc: desc,
+            })}
             title='VISIT' />
             
                     

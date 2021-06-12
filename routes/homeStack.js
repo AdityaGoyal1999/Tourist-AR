@@ -5,10 +5,11 @@ import LoginPage from '../screens/LoginPage';
 import Search from '../screens/Search';
 import StoreView from '../screens/StoreView';
 import Checkout from '../screens/Checkout';
-import VideoCall from '../screens/VideoCall';
+import Models from '../screens/Models';
 import VoiceToText from '../screens/VoiceToText';
 import PaymentSuccessful from '../screens/PaymentSucessfull';
 import ChooseImage from '../screens/ChooseImage';
+import Model from '../screens/Model';
 
 const screens = {
     LoginPage: {
@@ -23,8 +24,11 @@ const screens = {
     Checkout: {
         screen: Checkout,
     },
-    VideoCall: {
-        screen: VideoCall,
+    Models: {
+        screen: Models,
+    },
+    Model:{
+        screen: Model,
     },
     VoiceToText: {
         screen: VoiceToText,
