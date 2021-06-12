@@ -4,23 +4,25 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
 function SellerCard({ name, navigation, img, desc }) {
 
-    const imageURL = `../assets/store.jpg`;
+    // let imageURL = `../assets/` + img;
+    // // print(imageURL)
 
     return (
         <Card>
             <Card.Title>{ name }</Card.Title>
             <Card.Divider/>
-            <Card.Image 
-                source={require(imageURL)}
-                >
+                <Card.Image source={{
+                        uri: img,
+                        }}>
             </Card.Image>
+
             <Text style={styles.cardText}>
                 {desc}
             </Text>
             <Button
             buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
             onPress= {() => navigation.navigate('StoreView')}
-            title='CHECK IN' />
+            title='VISIT' />
             
                     
         </Card>
