@@ -1,78 +1,56 @@
-# Virtual Market AI
+# Tourist-AR
 
 ## Inspiration
 
-The pandemic is here to stay in different parts of the world for a couple of years. And people have grown increasingly conscious of reducing unnecessary contact. Therefore, they tend to use online stores like Amazon over local business. Furthermore, most of the small businesses don't have technical reach and infrastructure to reach to even their audience in their respective communities. So, pin pointing the main threat to local business, we have created an AI based product which helps reduce contact for the customer and store representative.
+Humans are inquisitive beings who love travelling and marvelling different tourist attractions and museums around the world. The global lockdowns have created a condition unlike other ever seen by us which curtails our liberty to discover different places around the world. Moreover, 2d images don't do much justice in giving the scale and details of a specific location or famous item. Stemming from this problem, we decided to create an Augmented Reality App where the user can experience different monuments/museum-installations etc. in 3d from the comfort of their homes.
 
 ## What it does
 
-VirtualMarket AI is a mobile Application for both Android and iOS. It helps local businesses create a store easily for themselves where they can upload information about the products they have and discounts offered.
-
-- For the customer, they will be shown specific stores in their community based on their location. The app helps reduce contact for a customer when they visit a local store.
-- The AI algorithm of object detection helps the user to checkout the items by just clicking pictures of them without going to a cashier or a kiosk which are high risk due to large public use.
-- Moreover, with the Live Video Calling feature, the customer can ask the representatives at the store any questions they have without having to meet them face-to-face. Furthermore, they will can see exclusive deals and collect points when they shop at a local store.
+Powered by the nearly unlimited models of EchoAR, our mobile web application brings a travel destination/museum experience to your phone. The user can log into their customised accounts and search for different locations/museums/monuments around the world and view them in real world through the camera of their phones. Moreover, we are using an Artificial Intelligence algorithm to guide the user with their searches and recommend them related location/monuments etc. so they can view similar places around the world just by a click on their phones. The Artificial Intelligence algorithm provides similar search items to the user and enhances the user experience.
 
 ## How we built it
 
-The frontend UI was created using React. The backend comprises several Python scripts to handle object detection and logo detection via Google Cloud Vision. To make the app more user-friendly, there is also customer service where any customer can record using voice to file suggestions, complaints, and questions, which can help a business understand its clients better. The recorded audio from customers are optionally processed for sentiment analysis to compute overall satsifaction for a business, this time accomplished via Google Cloud Language API. To promote business growth, a live stream component is accessible for each registered business whenever they start a product demo or live promotion event. This is build with Owncast, a live streaming application from Linode marketplace, with streaming data capable of being stored in Linode object storage. The frontend and backend connected via endpoints in Flask.
+We created the mobile application using React Native which enables us to publish the app on iOS and Android simultaneously. The database was supported by Linode database service to store user accounts, different locations, models at a location and link on EchoAR server to display the model. As mentioned, we are using EchoAR's server power and 3d model rendering to integrate and display the models in our application to create the main Augmented Reality experience.
+For the backend, we are using Flask(python) to process the data fetched and store the data processed by the database.
+Moreover, we have Artificial Intelligence/Machine Learning algorithm (using 'k-nearest neighbour' strategy) to optimise the search of different locations. It provides the user with similar locations based on the keywords he has entered, thereby, enhancing the user experience.
 
 ## Challenges we ran into
 
-One of the greatest time consumers was the initial deployment of the back-end server to Cloud Run on Googld Cloud Platform with Continuous Deployment, as none of us had prior experience with hosting on GCP or working with Docker. Additionally, local testing was hard as sometimes the amount of processing overworked our local machines. Instantiating a Linode for VSCode server in the cloud temporarily provided extra memory when needed.
+- None of the members had used AR before but we were keen on learning it. Although we were quite skeptical about it as if we weren't able to learn to use it, then the whole project would come crashing down. But, luckily, we divided up learning AR equally among the team member & the EchoAR workshop at the hackathon also helped us kickstart our very first Augmented Reality Application.
+- Another challenge that we face was to enhance the search using Artificial Intelligence algorithm. We wanted this to be a part of our app's search result to make the user's experience better and build an app closer to the production level. 2 of the members were versed in the field of AI and looked intensively at research papers and dived deep into the field just to enhance the user experience to produce more relevant search results. The other 2 members also looked into the problem to expose themselves to the field and contribute their valuable input. Finally, we found a suitable strategy(k nearest neighbour strategy) and implemented it successfully.
 
 ## Accomplishments that we're proud of
 
-- The overarching accomplishment of the team was integrating several pieces of AI tools with an elegant yet comprehensible UI to form a smart app for needy local businesses and community customers alike.
-- We are quite confident on the potential the application has to bring about customer growth for local businesses
+- The application as a whole is something that the whole team is quite proud of but the following are the specific items where our pride is at it's peak:
+
+1. Implementing a completely new and high-demand technology - Augmented Reality. We all have built a new skill of uplifting the user from the world to 2d to a more rich 3d experience.
+2. Keeping the user experience in paramount, we implemented a complex Artificial Intelligence/Machine Learning algorithm to provide relevant search results.
+3. Successfully integrating the backend, frontend & database of the application to create the project as a full stack application.
 
 ## What we learned
 
-- Frontend team gained new skills with React and mobile development
-- Mastered Cloud Run from Google Cloud Platform to host a backend server
-- Learned about Docker and its configuration as it was needed for continuous deployment to Cloud Run from the GitHub repository
-- Used CockroachDB with SQLAlchemy in Flask(Python) for Object Relational Mapping (ORM) for the backend databases.
-- Got introduced to & used Owncast, for access to live stream components for each registered business whenever they start a product demo or live promotion event
-- Got introduced and created Linode instances and client via the official Python API
-- Mastered Google Cloud AI solutions for object and logo detection and sentiment analysis from customer audio recordings
-- Learned and applied PocketSphinx engine to transcribe speech-to-text even in an offline mode
+Tech Skills-
 
-## Best Use of Google Cloud Platform
+1. Highly in-demand technology - Augmented Reality and it's different use cases.
+2. k-nearest strategy AI/ML algorithm.
 
-We've used Google Cloud Platform efficiently in two ways for optimal performance and security:
+Soft Skills-
 
-1. Google Cloud Run for hosting the back-end server, along with continuous deployment from the GitHub repository and management of API secrets and environment variables
-2. Google Cloud Vision APIs for product detection from the images uploaded by users, the results of which are used for billing.
-3. Google Cloud Language APIs for sentiment analysis of the user-provided feedback.
+1. Collaborating in a team in a time sensitive environment.
+2. Maintaining the team productive even if everyone is in different timezones of the world.
+3. Valuing technical capabilities more than hardship of picking up a new skill.
 
-## Best Use of CockroachDB
+## What's next for Tourist AR
 
-CockroachDB was extensively used in the back-end for seamless database management along with SQL Alchemy. This helped us to ease the database coding process as we could directly use the ORM (Object Relational Mapping) functionality provided to ensure flexibility, security, and modularity of code.
-
-## Best Domain Name from Domain.com
-
-We've registered the domain [virtualmarketai.tech](https://virtualmarketai.tech) from Domain.com for our project. The domain isn't being used currently as our solution is primarily a mobile application (Android/iOS).
-
-## What's next for VisualMarketAI
-
-- Data-driven analytics solutions would be the next logical step. Originally, a stretch goal was set to use the Apriori algorithm for associative mining on which set of products are most popular for a certain business.
+- Add more data/models for different locations throughout the world. Moreover, create a creator's account where creators can add models and description of a location themselves.
+- Create a more life like experience by adding the functionality of a map where user chooses a specific point inside a location and is lead to that model. For example, user is given a map of a museum and they select the location inside the museum(like, second floor's entrance) and they are presented with the models kept at that location.
 
 ## Judging Criteria
 
-1. **Originality** - There is no solution in the market that specifically caters to the local or community based businesses. Moreover, we have gone several steps further to make it pandemic proof by adding advanced features that promote social distancing. The Google Cloud based AI helps in checking out the items a person has at the store. Also, it video calls representatives/attendants in the store to spare themselves from meeting them in person.
+- Problem Solving: People not able to immerse themselves with different locations and experience them in 3d is a real problem that deprives humans from recreational and educational activities.
+- Development Complexity: The app is quite complex as it is a full stack iOS/Android application with a functional Frontend, Backend & Database. Along with that it uses complex technologies like Artificial Intelligence and Augmented Reality.
+- Aesthetics: User experience, UI and aesthetics have been the paramount aspect of our project. We believe that a happy user accounts for a successful project which we strived for.
+- Presentation: As a team, we have put a whole lot of effort in the presentation aspect of the project as well. (Describing the devpost robustly, creating a descriptive video and explaining everything in the Readme of the project)
 
-2. **Adherence to Theme** - The product is completely based on the theme which is empowering local/community businesses. We went through a robust ideation where we analysed what could be done to increase customers at the store and build an organic reach in their respective communities.
-
-3. **Does the hack work** - Absolutely! We have the frontend & backend up and running. Both the ends make multiple calls across different APIs between themselves and third party services like Google Cloud Platform, Linode etc. Moreover, we have user login page which creates a personal experience.
-
-4. **Learning** - The team had to go through an immense amount of learning. We made sure that each member has at least an abstract understanding of what technologies we are using in the whole application. For example, 3 members of our team aren't specialised in AI/ML so the member who is proficient in it explained what was happening in the algorithm. We also made the effort to go over several resources ourselves. Moreover, the front-end team had experience with React but the application had to use React-Native which has a decent learning curve itself. The backend team had to go through CI/CD process to test out the features and learning how to use Docker. We also had to learn how to use Linode which is one of the sponsors.
-
-5. **Technology** - We personally believe that the project uses quite complex and modern technologies like AI/ML, GCP, ReactNative, Owncast(Video calling service), CI/CD(Docker).
-   These technologies were quite hard to get their head around but by splitting up the task properly and working countless hours, we were able to pull this project off.
-   We had to put together a lot of components to build this project.
-   Finally, the project and technologies always made us excited and go "wow"
-
-## GitHub Repositories
-
-1. [Front-end GitHub repository (using React Native)](https://github.com/AdityaGoyal1999/VisualMarketAI-)
-2. [Back-end GitHub repository (using Flask)](https://github.com/rishi255/visual-market-ai-backend)
-# Tourist-AR
+1. [Front-end GitHub repository (using React Native)](https://github.com/AdityaGoyal1999/Tourist-AR)
+2. [Back-end GitHub repository (using Flask)](https://github.com/TejasAnand/TouristAR-Backend)

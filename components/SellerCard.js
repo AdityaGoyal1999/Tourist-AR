@@ -19,7 +19,7 @@ function SellerCard({ name, navigation, img, desc }) {
             </Text>
             <Button
             buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-            onPress= {() => navigation.navigate('StoreView', {
+            onPress= {() => navigation.navigate('Models', {
                 name: name,
                 img: img,
                 desc: desc,
